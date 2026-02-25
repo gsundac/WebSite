@@ -1,0 +1,22 @@
+# Configure global config variables, and get back the outputs.
+git config --global-user
+git config --global user.name "Gord Sundac"
+git config --global user.email "gsundac@gmail.com"
+git config
+git config --global user.name
+git config --global user.email
+
+# Clone from github, add files from CWD, and commit to the local repo.
+git clone https://github.com/gsundac/GIT_Course_2025.git
+git add .
+git commit -m "adding index and contact.html files"
+git status
+
+# Adding remote location and then pushing data up to the github repo.
+# After setting up ssh keys you need to set-url and assure global config variables are set, otherwise you get asked for a user/pass, which fails as GH no longer supports that auth via a push
+git remote set-url origin git@github.com:gsundac/GIT_Course_2025.git
+git push
+git status (should report back that remote has the same content as origin, which is the local repo on this machine.)
+
+git pull vs git clone
+pull just gets updates, clone pulls the entire repo.
